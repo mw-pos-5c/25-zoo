@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo", "Zoo\Zoo.csproj", "{BCB78A99-0646-420E-8EF4-ABC005BAE5C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animals", "Animals\Animals.csproj", "{E077E3DC-B86F-4979-B088-9817414A7E04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCB78A99-0646-420E-8EF4-ABC005BAE5C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB78A99-0646-420E-8EF4-ABC005BAE5C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB78A99-0646-420E-8EF4-ABC005BAE5C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB78A99-0646-420E-8EF4-ABC005BAE5C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E077E3DC-B86F-4979-B088-9817414A7E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E077E3DC-B86F-4979-B088-9817414A7E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E077E3DC-B86F-4979-B088-9817414A7E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E077E3DC-B86F-4979-B088-9817414A7E04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
