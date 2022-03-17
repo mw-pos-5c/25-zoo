@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 using Animals;
 
 namespace Zoo
@@ -26,12 +13,12 @@ namespace Zoo
         {
             InitializeComponent();
         }
-        
+
         public void UpdateFood()
         {
             HerbNeedsLabel.Content = AnimalFactory.GetInstance().CalcFoodRequirements(typeof(Herbivore));
             CarnivorNeedsLabel.Content = AnimalFactory.GetInstance().CalcFoodRequirements(typeof(Carnivore));
-            
+
             TotalPriceLabel.Content = AnimalFactory.GetInstance().CalcTotalPrice();
         }
 
@@ -39,19 +26,18 @@ namespace Zoo
         {
             var animals = AnimalFactory.GetInstance().GetAnimalCount();
             var listItems = new string[animals.Length];
-            
+
             for (var i = 0; i < animals.Length; i++)
             {
                 listItems[i] = $"{animals[i].Item2} x {animals[i].Item1}";
             }
-            
+
             AnimalListBox.ItemsSource = listItems;
             AnimalListBox.Items.Refresh();
         }
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
-            
             AnimalComboBox.ItemsSource = AnimalFactory.GetAnimalNames();
             UpdateFood();
             UpdateAnimalList();
@@ -65,7 +51,8 @@ namespace Zoo
                 return;
             }
 
-            AnimalFactory.GetInstance().Create(type, amount).Count(); // Stop compiler from pruning this pure function call :)
+            AnimalFactory.GetInstance().Create(type, amount)
+                .Count(); // Stop compiler from pruning this pure function call :)
 
 
             UpdateAnimalList();

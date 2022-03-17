@@ -6,11 +6,12 @@ public class AnimalFactory
 {
     private static readonly Dictionary<string, Animal> baseAnimals = new();
     private static AnimalFactory? instance = null;
-    
-    
+
+
     static AnimalFactory()
     {
-        IEnumerable<Type> types = Assembly.GetExecutingAssembly().GetTypes().Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(Animal)));
+        IEnumerable<Type> types = Assembly.GetExecutingAssembly().GetTypes()
+            .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(Animal)));
 
         foreach (Type type in types)
         {
@@ -18,6 +19,7 @@ public class AnimalFactory
             {
                 continue;
             }
+
             baseAnimals[type.Name] = animal;
         }
     }
@@ -65,16 +67,15 @@ public class AnimalFactory
     {
         return animalCount.Select(pair => (pair.Key, pair.Value)).ToArray();
     }
-    
+
     private readonly Dictionary<string, int> animalCount = new();
 
     private AnimalFactory()
     {
     }
-    
+
     public IEnumerable<Animal> Create(string type, int amount)
     {
-        Console.WriteLine("sus");
         if (!baseAnimals.TryGetValue(type, out Animal? animal))
         {
             yield break;
@@ -84,7 +85,7 @@ public class AnimalFactory
         {
             value = 0;
         }
-        
+
         animalCount[type] = value + amount;
 
         for (var i = 0; i < amount; i++)

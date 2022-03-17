@@ -8,20 +8,20 @@
         Loaded="MainWindow_OnLoaded">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
@@ -34,15 +34,15 @@
             <TextBox Grid.Column="2" Name="AmountTextBox" MinWidth="25" Margin="10 0">4</TextBox>
             <Button Name="BuyButton" Click="BuyButton_OnClick" Grid.Column="3" Margin="10 0">Kaufen</Button>
         </Grid>
-        
+
         <Label Grid.Row="2" Grid.Column="0">Bedarf Grünfutter / Tag [kg]</Label>
         <Label Grid.Row="3" Grid.Column="0">Bedarf FLeischfutter / Tag [kg]</Label>
         <Label Grid.Row="4" Grid.Column="0">Gesamtwert [€]</Label>
-        
+
         <Label Name="HerbNeedsLabel" Grid.Row="2" Grid.Column="1">1</Label>
         <Label Name="CarnivorNeedsLabel" Grid.Row="3" Grid.Column="1">1</Label>
         <Label Name="TotalPriceLabel" Grid.Row="4" Grid.Column="1">1</Label>
-        
+
         <Label Grid.Row="5" Grid.Column="0">Bestand:</Label>
         <ListBox Name="AnimalListBox" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></ListBox>
     </Grid>
