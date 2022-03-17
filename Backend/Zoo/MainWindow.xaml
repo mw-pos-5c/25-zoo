@@ -1,9 +1,9 @@
 ﻿<Window x:Class="Zoo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:D="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:Mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Mc:Ignorable="D"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="400"
         Loaded="MainWindow_OnLoaded">
     <Grid Margin="5">
@@ -30,20 +30,20 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0">Verfügbare Spezies</Label>
-            <ComboBox Grid.Column="1" Name="animalComboBox" Margin="10 0"></ComboBox>
-            <TextBox Grid.Column="2" Name="amountTextBox" MinWidth="25" Margin="10 0">4</TextBox>
-            <Button Grid.Column="3" Margin="10 0">Kaufen</Button>
+            <ComboBox Grid.Column="1" Name="AnimalComboBox" Margin="10 0"></ComboBox>
+            <TextBox Grid.Column="2" Name="AmountTextBox" MinWidth="25" Margin="10 0">4</TextBox>
+            <Button Name="BuyButton" Click="BuyButton_OnClick" Grid.Column="3" Margin="10 0">Kaufen</Button>
         </Grid>
         
         <Label Grid.Row="2" Grid.Column="0">Bedarf Grünfutter / Tag [kg]</Label>
         <Label Grid.Row="3" Grid.Column="0">Bedarf FLeischfutter / Tag [kg]</Label>
         <Label Grid.Row="4" Grid.Column="0">Gesamtwert [€]</Label>
         
-        <Label Grid.Row="2" Grid.Column="1">1</Label>
-        <Label Grid.Row="3" Grid.Column="1">1</Label>
-        <Label Grid.Row="4" Grid.Column="1">1</Label>
+        <Label Name="HerbNeedsLabel" Grid.Row="2" Grid.Column="1">1</Label>
+        <Label Name="CarnivorNeedsLabel" Grid.Row="3" Grid.Column="1">1</Label>
+        <Label Name="TotalPriceLabel" Grid.Row="4" Grid.Column="1">1</Label>
         
         <Label Grid.Row="5" Grid.Column="0">Bestand:</Label>
-        <ListBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></ListBox>
+        <ListBox Name="AnimalListBox" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></ListBox>
     </Grid>
 </Window>

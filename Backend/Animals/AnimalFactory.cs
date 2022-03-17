@@ -32,18 +32,60 @@ public class AnimalFactory
         return baseAnimals.Keys.ToArray();
     }
 
+    public double CalcFoodRequirements(Type type)
+    {
+        double total = 0;
+        foreach (var (animalName, count) in animalCount)
+        {
+            var baseAnimal = baseAnimals[animalName];
+            if (!baseAnimal.GetType().IsSubclassOf(type))
+            {
+                continue;
+            }
+
+            total += baseAnimal.FoodRequirement * count;
+        }
+
+        return total;
+    }
+
+    public double CalcTotalPrice()
+    {
+        double total = 0;
+        foreach (var (animalName, count) in animalCount)
+        {
+            var baseAnimal = baseAnimals[animalName];
+            total += baseAnimal.Price * count;
+        }
+
+        return total;
+    }
+
+    public (string, int)[] GetAnimalCount()
+    {
+        return animalCount.Select(pair => (pair.Key, pair.Value)).ToArray();
+    }
+    
     private readonly Dictionary<string, int> animalCount = new();
-    private AnimalFactory() {}
+
+    private AnimalFactory()
+    {
+    }
     
     public IEnumerable<Animal> Create(string type, int amount)
     {
-        
+        Console.WriteLine("sus");
         if (!baseAnimals.TryGetValue(type, out Animal? animal))
         {
             yield break;
         }
 
-        animalCount[type] += amount;
+        if (!animalCount.TryGetValue(type, out int value))
+        {
+            value = 0;
+        }
+        
+        animalCount[type] = value + amount;
 
         for (var i = 0; i < amount; i++)
         {

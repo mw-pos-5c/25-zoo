@@ -6,4 +6,7 @@ public abstract class Animal
     {
         return (Animal)MemberwiseClone();
     }
+    
+    public abstract double Price { get; }
+    public abstract double FoodRequirement { get; }
 }
